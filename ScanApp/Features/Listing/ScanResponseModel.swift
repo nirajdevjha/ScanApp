@@ -14,9 +14,27 @@ struct ScanResponse: Decodable {
     let id: Int?
     let name: String?
     let tag: String?
-    let color: String?
+    let color: TagColorCategory
     let criteria: [ScanCriteria]?
 }
+
+enum TagColorCategory: String, Decodable {
+    case green = "green"
+    case red = "red"
+    case white = "white"
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.singleValueContainer()
+        let decodedString = try container.decode(String.self)
+        
+        if let value = TagColorCategory(rawValue: decodedString) {
+            self = value
+        } else {
+            self = .white
+        }
+    }
+}
+
 
 struct ScanCriteria: Decodable {
     let scanType: ScanCriteriaType
