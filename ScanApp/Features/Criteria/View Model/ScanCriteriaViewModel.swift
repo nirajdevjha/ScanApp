@@ -54,7 +54,7 @@ class ScanCriteriaViewModel {
                                 }
                             }
                         }
-                       
+                        
                         let criteriaModel = ScanCriteriaCellModel(rowType: .criteria, text: nil, attributedText: getValueAttributedText(text, valueTextArray: valueTextArray, keyArray: keyArray))
                         criteriaCellModels.append(criteriaModel)
                     }
@@ -93,5 +93,9 @@ class ScanCriteriaViewModel {
             return variable[key]
         }
         return nil
+    }
+    
+    func reloadData() {
+        prepareCellModels()
     }
 }

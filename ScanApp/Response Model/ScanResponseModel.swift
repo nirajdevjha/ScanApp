@@ -48,14 +48,14 @@ struct ScanCriteria: Decodable {
     }
 }
 
-struct ScanVariable: Decodable {
+class ScanVariable: Decodable {
     let variableType: ScanVariableType
-    let values: [Double]?
+    let values: [Float]?
     let studyType: String?
     let parameterName: String?
     let minValue: Int?
     let maxValue: Int?
-    let defaultValue: Int?
+    var defaultValue: Int?
     
     enum CodingKeys: String, CodingKey {
         case variableType = "type"

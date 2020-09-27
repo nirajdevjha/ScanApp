@@ -23,3 +23,10 @@ struct ScanVariableValueCellModel: ScanVariableRowModel {
 }
 
 
+struct ScanVariableIndicatorCellModel: ScanVariableRowModel {
+    var rowType: ScanVariableRowType
+    let paramName: String
+    let defaultValue: Int
+    let minValue: Int
+    let maxValue: Int
+}

@@ -8,11 +8,16 @@
 
 import UIKit
 
+protocol ScanVariableVCProtocol: class {
+    func updateCriterias()
+}
+
 class ScanVariableVC: UIViewController {
    
     @IBOutlet private weak var tableView: UITableView!
     
     private var viewModel: ScanVariableViewModel!
+    private weak var delegate: ScanVariableVCProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +32,7 @@ class ScanVariableVC: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(ScanListingInfoTVC.self)
+        tableView.register(ScanVariableIndicatorTVC.self)
         viewModelCallbacks()
     }
     
@@ -36,21 +42,33 @@ class ScanVariableVC: UIViewController {
                 self?.tableView.reloadData()
             }
         }
+        
+        viewModel.showErrorMessage = { [weak self] message in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                UIAlertController.showErrorAlert(
+                    from: self,
+                    title: "Error", msg: message)
+            }
+        }
     }
     
     @objc
     private func closeTapped() {
         dismiss(animated: true)
+        delegate?.updateCriterias()
     }
     
     @objc
     private func doneTapped() {
         dismiss(animated: true)
+        delegate?.updateCriterias()
     }
     
-    class func controller(viewModel: ScanVariableViewModel) -> ScanVariableVC {
+    class func controller(viewModel: ScanVariableViewModel, delegate: ScanVariableVCProtocol?) -> ScanVariableVC {
         let vc = ScanVariableVC(nibName: String(describing: self), bundle: Bundle.main)
         vc.viewModel = viewModel
+        vc.delegate = delegate
         return vc
     }
 }
@@ -74,8 +92,20 @@ extension ScanVariableVC: UITableViewDelegate, UITableViewDataSource {
             }
             
         case .indicator:
-            break
+            if let rowModel = rowModel as? ScanVariableIndicatorCellModel {
+                let cell: ScanVariableIndicatorTVC = tableView.dequeueReuseCell(forIndexPath: indexPath)
+                cell.configure(rowModel, delegate: self)
+                return cell
+            }
         }
         return UITableViewCell()
     }
+}
+
+extension ScanVariableVC: ScanVariableIndicatorCellProtocol {
+    func updateParamValue(newDefaultValue: Int, cell: ScanVariableIndicatorTVC) {
+        guard let indexPath = tableView.indexPath(for: cell) else { return }
+        viewModel.updateParamValue(at: indexPath.row, newValue: newDefaultValue)
+    }
+    
 }

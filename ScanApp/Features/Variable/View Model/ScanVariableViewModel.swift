@@ -13,6 +13,7 @@ class ScanVariableViewModel {
     private(set) var variableCellModels = [ScanVariableRowModel]()
     
     var reloadTable: () -> () = {}
+    var showErrorMessage: (String) -> () = { _ in }
     
     init(variable: ScanVariable) {
         self.variable = variable
@@ -20,6 +21,7 @@ class ScanVariableViewModel {
     }
     
     private func prepareCellModels() {
+        variableCellModels.removeAll()
         if variable.variableType == .value {
             if let values = variable.values {
                 values.forEach { value in
@@ -28,7 +30,10 @@ class ScanVariableViewModel {
                 }
             }
         } else if variable.variableType == .indicator {
-            
+            if let paramName = variable.parameterName, let defaultValue = variable.defaultValue, let max = variable.maxValue, let min = variable.minValue {
+                let indicatorModel = ScanVariableIndicatorCellModel(rowType: .indicator, paramName: paramName, defaultValue: defaultValue, minValue: min, maxValue: max)
+                variableCellModels.append(indicatorModel)
+            }
         }
         reloadTable()
     }
@@ -45,4 +50,17 @@ extension ScanVariableViewModel {
         return variableCellModels[index]
     }
     
+    func updateParamValue(at index: Int, newValue: Int) {
+        if variable.variableType == .indicator {
+            /// validating the newValue to be within maxValue and minValue
+            if let max = variable.maxValue, let min = variable.minValue {
+                if newValue <= max && newValue >= min {
+                    variable.defaultValue = newValue
+                } else {
+                    showErrorMessage("\(newValue) is not between allowed range of min \(min) & max \(max)")
+                }
+            }
+        }
+        prepareCellModels()
+    }
 }

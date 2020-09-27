@@ -89,8 +89,14 @@ extension ScanCriteriaVC: ScanCriteriaCellProtocol {
             let variable = viewModel.getScanCriteriaVariable(at: indexPath.row, key: key) else { return }
         
         let vm = ScanVariableViewModel(variable: variable)
-        let criteriaVC = ScanVariableVC.controller(viewModel: vm)
+        let criteriaVC = ScanVariableVC.controller(viewModel: vm, delegate: self)
         let navigationController = UINavigationController(rootViewController: criteriaVC)
         present(navigationController, animated: true)
+    }
+}
+
+extension ScanCriteriaVC: ScanVariableVCProtocol {
+    func updateCriterias() {
+        viewModel.reloadData()
     }
 }
