@@ -9,10 +9,13 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    private var viewModel: ScanListingViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        viewModel = ScanListingViewModel()
+        viewModel?.fetchScanData()
     }
 
 
