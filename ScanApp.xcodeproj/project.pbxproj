@@ -28,6 +28,12 @@
 		40EA897C2520C57B005F385D /* ScanCriteriaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA897A2520C57B005F385D /* ScanCriteriaVC.swift */; };
 		40EA897F2520C650005F385D /* ScanCriteriaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA897E2520C650005F385D /* ScanCriteriaViewModel.swift */; };
 		40EA89822520DBCA005F385D /* ScanCriteriaCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA89812520DBCA005F385D /* ScanCriteriaCellModel.swift */; };
+		40EA89882520E73A005F385D /* ScanCriteriaTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA89862520E73A005F385D /* ScanCriteriaTVC.swift */; };
+		40EA89892520E73A005F385D /* ScanCriteriaTVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40EA89872520E73A005F385D /* ScanCriteriaTVC.xib */; };
+		40EA8991252121E4005F385D /* ScanVariableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA898F252121E4005F385D /* ScanVariableVC.swift */; };
+		40EA8992252121E4005F385D /* ScanVariableVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40EA8990252121E4005F385D /* ScanVariableVC.xib */; };
+		40EA899425212304005F385D /* ScanVariableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA899325212304005F385D /* ScanVariableViewModel.swift */; };
+		40EA89962521246B005F385D /* ScanVariableCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA89952521246B005F385D /* ScanVariableCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +72,12 @@
 		40EA897A2520C57B005F385D /* ScanCriteriaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCriteriaVC.swift; sourceTree = "<group>"; };
 		40EA897E2520C650005F385D /* ScanCriteriaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCriteriaViewModel.swift; sourceTree = "<group>"; };
 		40EA89812520DBCA005F385D /* ScanCriteriaCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCriteriaCellModel.swift; sourceTree = "<group>"; };
+		40EA89862520E73A005F385D /* ScanCriteriaTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCriteriaTVC.swift; sourceTree = "<group>"; };
+		40EA89872520E73A005F385D /* ScanCriteriaTVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanCriteriaTVC.xib; sourceTree = "<group>"; };
+		40EA898F252121E4005F385D /* ScanVariableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVariableVC.swift; sourceTree = "<group>"; };
+		40EA8990252121E4005F385D /* ScanVariableVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanVariableVC.xib; sourceTree = "<group>"; };
+		40EA899325212304005F385D /* ScanVariableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVariableViewModel.swift; sourceTree = "<group>"; };
+		40EA89952521246B005F385D /* ScanVariableCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVariableCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +156,7 @@
 			children = (
 				40EA895825207C5B005F385D /* Listing */,
 				40EA895D25207CB4005F385D /* Criteria */,
+				40EA898A25212188005F385D /* Variable */,
 			);
 			path = Features;
 			sourceTree = "<group>";
@@ -202,6 +215,8 @@
 				40EA896025207CC6005F385D /* Controller */,
 				40EA895F25207CC0005F385D /* Views */,
 				40EA895E25207CBB005F385D /* IB */,
+				40EA89862520E73A005F385D /* ScanCriteriaTVC.swift */,
+				40EA89872520E73A005F385D /* ScanCriteriaTVC.xib */,
 			);
 			path = Criteria;
 			sourceTree = "<group>";
@@ -275,6 +290,49 @@
 				40EA89692520834C005F385D /* ScanResponseModel.swift */,
 			);
 			path = "Response Model";
+			sourceTree = "<group>";
+		};
+		40EA898A25212188005F385D /* Variable */ = {
+			isa = PBXGroup;
+			children = (
+				40EA898E252121B1005F385D /* Views */,
+				40EA898D252121AB005F385D /* Model */,
+				40EA898C252121A3005F385D /* View Model */,
+				40EA898B2521219B005F385D /* Controller */,
+			);
+			path = Variable;
+			sourceTree = "<group>";
+		};
+		40EA898B2521219B005F385D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				40EA898F252121E4005F385D /* ScanVariableVC.swift */,
+				40EA8990252121E4005F385D /* ScanVariableVC.xib */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		40EA898C252121A3005F385D /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				40EA899325212304005F385D /* ScanVariableViewModel.swift */,
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		40EA898D252121AB005F385D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				40EA89952521246B005F385D /* ScanVariableCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40EA898E252121B1005F385D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,7 +416,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40EA8992252121E4005F385D /* ScanVariableVC.xib in Resources */,
 				40EA894125207BE9005F385D /* LaunchScreen.storyboard in Resources */,
+				40EA89892520E73A005F385D /* ScanCriteriaTVC.xib in Resources */,
 				40EA897125209B8A005F385D /* ScanListingInfoTVC.xib in Resources */,
 				40EA893E25207BE9005F385D /* Assets.xcassets in Resources */,
 			);
@@ -379,6 +439,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				40EA89752520A1B6005F385D /* ScanSeparatorCell.swift in Sources */,
+				40EA899425212304005F385D /* ScanVariableViewModel.swift in Sources */,
 				40EA893625207BE8005F385D /* ScanListingVC.swift in Sources */,
 				40EA896625208178005F385D /* EncoderDecoder.swift in Sources */,
 				40EA896425207F28005F385D /* WebServiceManager.swift in Sources */,
@@ -392,7 +453,10 @@
 				40EA89822520DBCA005F385D /* ScanCriteriaCellModel.swift in Sources */,
 				40EA893425207BE8005F385D /* SceneDelegate.swift in Sources */,
 				40EA896D252083CB005F385D /* ScanResource.swift in Sources */,
+				40EA89962521246B005F385D /* ScanVariableCellModel.swift in Sources */,
 				40EA89792520B3E3005F385D /* UIAlertController+Error.swift in Sources */,
+				40EA8991252121E4005F385D /* ScanVariableVC.swift in Sources */,
+				40EA89882520E73A005F385D /* ScanCriteriaTVC.swift in Sources */,
 				40EA896A2520834C005F385D /* ScanResponseModel.swift in Sources */,
 				40EA897025209B8A005F385D /* ScanListingInfoTVC.swift in Sources */,
 			);

@@ -87,7 +87,7 @@ enum ScanCriteriaType: String, Decodable {
 
 enum ScanVariableType: String, Decodable {
     case value = "value"
-    case indicator = "variable"
+    case indicator = "indicator"
     case unknown = "unknown"
     
     init(from decoder: Decoder) throws {

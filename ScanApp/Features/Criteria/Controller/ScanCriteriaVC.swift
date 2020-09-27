@@ -14,13 +14,12 @@ class ScanCriteriaVC: UIViewController {
         let tableView = UITableView(frame: .zero, style: .plain)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.backgroundColor = .black
-        tableView.separatorStyle = .none
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 50
         tableView.contentInset = UIEdgeInsets(top: 8, left: 0, bottom: 16, right: 0)
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(ScanListingInfoTVC.self)
+        tableView.register(ScanCriteriaTVC.self)
         return tableView
     }()
     
@@ -38,6 +37,7 @@ class ScanCriteriaVC: UIViewController {
     //MARK:- Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.largeTitleDisplayMode = .never
         title = viewModel.title
         setupViews()
         viewModelCallbacks()
@@ -76,10 +76,21 @@ extension ScanCriteriaVC: UITableViewDelegate, UITableViewDataSource {
         }
         switch rowModel.rowType {
         case .criteria:
-            let cell: ScanListingInfoTVC = tableView.dequeueReuseCell(forIndexPath: indexPath)
-            cell.configure(from: rowModel)
+            let cell: ScanCriteriaTVC = tableView.dequeueReuseCell(forIndexPath: indexPath)
+            cell.configure(from: rowModel, delegate: self)
             return cell
         }
     }
 }
 
+extension ScanCriteriaVC: ScanCriteriaCellProtocol {
+    func didTapCriteria(key: String, cell: ScanCriteriaTVC) {
+        guard let indexPath = tableView.indexPath(for: cell),
+            let variable = viewModel.getScanCriteriaVariable(at: indexPath.row, key: key) else { return }
+        
+        let vm = ScanVariableViewModel(variable: variable)
+        let criteriaVC = ScanVariableVC.controller(viewModel: vm)
+        let navigationController = UINavigationController(rootViewController: criteriaVC)
+        present(navigationController, animated: true)
+    }
+}

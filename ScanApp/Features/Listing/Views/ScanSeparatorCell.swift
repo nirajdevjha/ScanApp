@@ -34,6 +34,7 @@ final class ScanSeparatorCell: UITableViewCell {
     }
     
     func setupViews() {
+        selectionStyle = .none
         contentView.backgroundColor = .black
         
         contentView.addSubview(separatorView)

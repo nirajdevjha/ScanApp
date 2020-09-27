@@ -37,8 +37,10 @@ extension ScanListingInfoTVC {
         scanTagLbl.textColor = tagColor
     }
     
-    func configure(from model: ScanCriteriaCellModel) {
-        scanNameLbl.text = model.text
+    func configure(_ model: ScanVariableValueCellModel) {
+        scanNameLbl.text = model.value
         scanTagLbl.isHidden = true
     }
 }
+
+

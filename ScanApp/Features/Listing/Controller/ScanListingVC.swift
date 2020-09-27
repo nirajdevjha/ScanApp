@@ -48,6 +48,9 @@ class ScanListingVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Scan List"
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         setupViews()
         viewModelCallbacks()
         viewModel.fetchScanData()

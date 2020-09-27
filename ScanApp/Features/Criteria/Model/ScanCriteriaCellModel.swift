@@ -18,6 +18,7 @@ enum ScanCriteriaRowType {
 
 struct ScanCriteriaCellModel: ScanCriteriaRowModel {
     var rowType: ScanCriteriaRowType
-    let text: String
+    let text: String?
+    let attributedText: NSAttributedString?
 }
 
