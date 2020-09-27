@@ -25,6 +25,9 @@
 		40EA89752520A1B6005F385D /* ScanSeparatorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA89742520A1B6005F385D /* ScanSeparatorCell.swift */; };
 		40EA89772520A579005F385D /* ScanListingCellModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA89762520A578005F385D /* ScanListingCellModels.swift */; };
 		40EA89792520B3E3005F385D /* UIAlertController+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA89782520B3E3005F385D /* UIAlertController+Error.swift */; };
+		40EA897C2520C57B005F385D /* ScanCriteriaVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA897A2520C57B005F385D /* ScanCriteriaVC.swift */; };
+		40EA897F2520C650005F385D /* ScanCriteriaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA897E2520C650005F385D /* ScanCriteriaViewModel.swift */; };
+		40EA89822520DBCA005F385D /* ScanCriteriaCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA89812520DBCA005F385D /* ScanCriteriaCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +63,9 @@
 		40EA89742520A1B6005F385D /* ScanSeparatorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanSeparatorCell.swift; sourceTree = "<group>"; };
 		40EA89762520A578005F385D /* ScanListingCellModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanListingCellModels.swift; sourceTree = "<group>"; };
 		40EA89782520B3E3005F385D /* UIAlertController+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Error.swift"; sourceTree = "<group>"; };
+		40EA897A2520C57B005F385D /* ScanCriteriaVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCriteriaVC.swift; sourceTree = "<group>"; };
+		40EA897E2520C650005F385D /* ScanCriteriaViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCriteriaViewModel.swift; sourceTree = "<group>"; };
+		40EA89812520DBCA005F385D /* ScanCriteriaCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCriteriaCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,8 +107,9 @@
 		40EA893025207BE8005F385D /* ScanApp */ = {
 			isa = PBXGroup;
 			children = (
-				40EA896225207F11005F385D /* Web sevice manager */,
 				40EA895725207C51005F385D /* Features */,
+				40EA89852520DC30005F385D /* Response Model */,
+				40EA896225207F11005F385D /* Web sevice manager */,
 				40EA895625207C3D005F385D /* Utilities */,
 				40EA893125207BE8005F385D /* AppDelegate.swift */,
 				40EA893325207BE8005F385D /* SceneDelegate.swift */,
@@ -144,13 +151,12 @@
 		40EA895825207C5B005F385D /* Listing */ = {
 			isa = PBXGroup;
 			children = (
+				40EA89832520DC12005F385D /* Model */,
 				40EA896B252083BC005F385D /* ResourceBuilder */,
 				40EA895C25207C8E005F385D /* Controller */,
 				40EA895B25207C85005F385D /* View Model */,
 				40EA895A25207C6B005F385D /* Views */,
 				40EA895925207C62005F385D /* IB */,
-				40EA89692520834C005F385D /* ScanResponseModel.swift */,
-				40EA89762520A578005F385D /* ScanListingCellModels.swift */,
 			);
 			path = Listing;
 			sourceTree = "<group>";
@@ -191,6 +197,7 @@
 		40EA895D25207CB4005F385D /* Criteria */ = {
 			isa = PBXGroup;
 			children = (
+				40EA89802520DBBF005F385D /* Model */,
 				40EA896125207CD3005F385D /* View Model */,
 				40EA896025207CC6005F385D /* Controller */,
 				40EA895F25207CC0005F385D /* Views */,
@@ -216,6 +223,7 @@
 		40EA896025207CC6005F385D /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				40EA897A2520C57B005F385D /* ScanCriteriaVC.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -223,6 +231,7 @@
 		40EA896125207CD3005F385D /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				40EA897E2520C650005F385D /* ScanCriteriaViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -242,6 +251,30 @@
 				40EA896C252083CB005F385D /* ScanResource.swift */,
 			);
 			path = ResourceBuilder;
+			sourceTree = "<group>";
+		};
+		40EA89802520DBBF005F385D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				40EA89812520DBCA005F385D /* ScanCriteriaCellModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40EA89832520DC12005F385D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				40EA89762520A578005F385D /* ScanListingCellModels.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		40EA89852520DC30005F385D /* Response Model */ = {
+			isa = PBXGroup;
+			children = (
+				40EA89692520834C005F385D /* ScanResponseModel.swift */,
+			);
+			path = "Response Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -352,8 +385,11 @@
 				40EA893225207BE8005F385D /* AppDelegate.swift in Sources */,
 				40EA8968252082ED005F385D /* ScanListingViewModel.swift in Sources */,
 				40EA897325209E5C005F385D /* UIView+Extension.swift in Sources */,
+				40EA897C2520C57B005F385D /* ScanCriteriaVC.swift in Sources */,
 				40EA893C25207BE8005F385D /* ScanApp.xcdatamodeld in Sources */,
 				40EA89772520A579005F385D /* ScanListingCellModels.swift in Sources */,
+				40EA897F2520C650005F385D /* ScanCriteriaViewModel.swift in Sources */,
+				40EA89822520DBCA005F385D /* ScanCriteriaCellModel.swift in Sources */,
 				40EA893425207BE8005F385D /* SceneDelegate.swift in Sources */,
 				40EA896D252083CB005F385D /* ScanResource.swift in Sources */,
 				40EA89792520B3E3005F385D /* UIAlertController+Error.swift in Sources */,

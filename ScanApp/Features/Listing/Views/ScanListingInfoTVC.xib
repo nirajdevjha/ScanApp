@@ -19,7 +19,7 @@
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="NQL-c3-Qle">
                         <rect key="frame" x="22" y="8" width="276" height="41"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Top Gainers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bf4-rp-Ha1">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Top Gainers" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bf4-rp-Ha1">
                                 <rect key="frame" x="0.0" y="0.0" width="80" height="25"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -46,6 +46,7 @@
             <connections>
                 <outlet property="scanNameLbl" destination="Bf4-rp-Ha1" id="IVx-m9-gRY"/>
                 <outlet property="scanTagLbl" destination="oLx-vT-Fyh" id="1rh-Kx-UpA"/>
+                <outlet property="stackView" destination="NQL-c3-Qle" id="Oa4-Ie-ZPk"/>
             </connections>
             <point key="canvasLocation" x="66.666666666666671" y="-9.0401785714285712"/>
         </tableViewCell>

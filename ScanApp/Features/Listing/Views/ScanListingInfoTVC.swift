@@ -11,11 +11,13 @@ import UIKit
 
 final class ScanListingInfoTVC: UITableViewCell {
 
+    @IBOutlet private weak var stackView: UIStackView!
     @IBOutlet private weak var scanNameLbl: UILabel!
     @IBOutlet private weak var scanTagLbl: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        selectionStyle = .none
     }
 }
 
@@ -33,5 +35,10 @@ extension ScanListingInfoTVC {
             tagColor = .white
         }
         scanTagLbl.textColor = tagColor
+    }
+    
+    func configure(from model: ScanCriteriaCellModel) {
+        scanNameLbl.text = model.text
+        scanTagLbl.isHidden = true
     }
 }

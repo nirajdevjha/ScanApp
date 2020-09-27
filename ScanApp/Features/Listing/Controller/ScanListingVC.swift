@@ -35,6 +35,7 @@ class ScanListingVC: UIViewController {
     
     private let viewModel: ScanListingViewModel
     
+    //MARK:- Life cycle
     init(viewModel: ScanListingViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
@@ -44,7 +45,6 @@ class ScanListingVC: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK:- Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Scan List"
@@ -53,6 +53,7 @@ class ScanListingVC: UIViewController {
         viewModel.fetchScanData()
     }
     
+    //MARK:- Private
     private func setupViews() {
         view.backgroundColor = .black
         
@@ -132,5 +133,16 @@ extension ScanListingVC: UITableViewDelegate, UITableViewDataSource {
             }
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let (criterias, name) = viewModel.scanCriteria(at: indexPath.row),
+            let crtiteriaList = criterias,
+            let title = name else {
+                return
+        }
+        let vm = ScanCriteriaViewModel(crtiteriaList, title: title)
+        let criteriaVC = ScanCriteriaVC(viewModel: vm)
+        navigationController?.pushViewController(criteriaVC, animated: true)
     }
 }

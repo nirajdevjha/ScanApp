@@ -19,6 +19,7 @@ enum ScanListingRowType {
 
 struct ScanListingInfoCellModel: ScanListingRowModel {
     var rowType: ScanListingRowType
+    let scanId: Int
     let scanName: String
     let scanTag: String
     let tagColor: TagColorCategory
