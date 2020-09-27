@@ -81,10 +81,10 @@
 		40EA893025207BE8005F385D /* ScanApp */ = {
 			isa = PBXGroup;
 			children = (
+				40EA895625207C3D005F385D /* IB */,
 				40EA893125207BE8005F385D /* AppDelegate.swift */,
 				40EA893325207BE8005F385D /* SceneDelegate.swift */,
 				40EA893525207BE8005F385D /* ViewController.swift */,
-				40EA893725207BE8005F385D /* Main.storyboard */,
 				40EA893D25207BE9005F385D /* Assets.xcassets */,
 				40EA893F25207BE9005F385D /* LaunchScreen.storyboard */,
 				40EA894225207BE9005F385D /* Info.plist */,
@@ -100,6 +100,102 @@
 				40EA894D25207BE9005F385D /* Info.plist */,
 			);
 			path = ScanAppTests;
+			sourceTree = "<group>";
+		};
+		40EA895625207C3D005F385D /* IB */ = {
+			isa = PBXGroup;
+			children = (
+				40EA895725207C51005F385D /* Features */,
+				40EA893725207BE8005F385D /* Main.storyboard */,
+			);
+			path = IB;
+			sourceTree = "<group>";
+		};
+		40EA895725207C51005F385D /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				40EA895D25207CB4005F385D /* Criteria */,
+				40EA895825207C5B005F385D /* Listing */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		40EA895825207C5B005F385D /* Listing */ = {
+			isa = PBXGroup;
+			children = (
+				40EA895C25207C8E005F385D /* Controller */,
+				40EA895B25207C85005F385D /* View Model */,
+				40EA895A25207C6B005F385D /* Views */,
+				40EA895925207C62005F385D /* IB */,
+			);
+			path = Listing;
+			sourceTree = "<group>";
+		};
+		40EA895925207C62005F385D /* IB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IB;
+			sourceTree = "<group>";
+		};
+		40EA895A25207C6B005F385D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		40EA895B25207C85005F385D /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
+			sourceTree = "<group>";
+		};
+		40EA895C25207C8E005F385D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		40EA895D25207CB4005F385D /* Criteria */ = {
+			isa = PBXGroup;
+			children = (
+				40EA896125207CD3005F385D /* View Model */,
+				40EA896025207CC6005F385D /* Controller */,
+				40EA895F25207CC0005F385D /* Views */,
+				40EA895E25207CBB005F385D /* IB */,
+			);
+			path = Criteria;
+			sourceTree = "<group>";
+		};
+		40EA895E25207CBB005F385D /* IB */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = IB;
+			sourceTree = "<group>";
+		};
+		40EA895F25207CC0005F385D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		40EA896025207CC6005F385D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		40EA896125207CD3005F385D /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "View Model";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
