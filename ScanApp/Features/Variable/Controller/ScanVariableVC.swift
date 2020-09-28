@@ -25,7 +25,7 @@ class ScanVariableVC: UIViewController {
         navigationItem.rightBarButtonItem = doneBarButton
         let closeBarButton = UIBarButtonItem(title: "Close", style: .done, target: self, action: #selector(closeTapped))
         navigationItem.leftBarButtonItem = closeBarButton
-        title = "Customize"
+        title = viewModel.navigationTitle
         tableView.contentInset.top = 10
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 50

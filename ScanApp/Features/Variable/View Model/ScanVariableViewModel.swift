@@ -20,6 +20,14 @@ class ScanVariableViewModel {
         prepareCellModels()
     }
     
+    var navigationTitle: String {
+        if variable.variableType == .indicator {
+            return "Set Parameters"
+        } else {
+            return "Values List"
+        }
+    }
+    
     private func prepareCellModels() {
         variableCellModels.removeAll()
         if variable.variableType == .value {

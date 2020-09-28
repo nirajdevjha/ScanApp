@@ -52,6 +52,8 @@ public extension NSMutableURLRequest {
 }
 
 
+public var defaultSession:URLSessionProtocol = URLSession(configuration: configuration)
+
 public protocol URLSessionProtocol {
     func dataTask(with request: URLRequest, completionHandler: @escaping (Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
 }
@@ -66,7 +68,6 @@ public let configuration: URLSessionConfiguration = {
 
 public class WebServiceManager {
     public var dataTask: URLSessionTask? = nil
-    public var defaultSession: URLSessionProtocol = URLSession(configuration: configuration)
     
     public init() {}
     
